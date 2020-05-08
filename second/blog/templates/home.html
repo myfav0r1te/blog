@@ -1,0 +1,53 @@
+<html>
+<head>
+<style>
+.page-header{
+    background-color: coral;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+.page-header h1{
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+.post h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:salmon;
+    margin-left:40px;
+}
+.date {
+    float:inline-start;
+    margin-left:40px;
+    font-size:10px;
+    color:slategray;
+}
+.body{
+    margin-left:40px;
+    color:#000000;
+    width:100%;
+}
+    </style>
+    <title>블로그 입니다</title>
+</head>
+<body>
+    <div class="page-header">
+        <h1>블로그 입니다</h1>
+    </div>
+
+{% for blog in blogs.all%}
+<div class="post">
+    <h1>{{blog.title}}</h1>
+</div>
+<div class="date">
+  <p>{{blog.pub_date}}</p>
+</div>
+<div class="body">
+  <p>{{blog.body}}</p>
+</div>
+  <br><br>
+</div>
+{%endfor%}
+
+</body>
+</html>
